@@ -7,13 +7,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      YAML_FILE_PATH: normative-analytics-dbt/slack_alerts.yml
-      SLACK_WEBHOOK_URL: '= ${{ secrets.SLACK_WEBHOOK_URL }}'
+      #YAML_FILE_PATH: normative-analytics-dbt/slack_alerts.yml
+      #SLACK_WEBHOOK_URL: '= ${{ secrets.SLACK_WEBHOOK_URL }}'
       DBT_SERVICE_ACCOUNT_TOKEN: '= ${{ secrets.DBT_SERVICE_ACCOUNT_TOKEN }}'
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: normative-io/normative-analytics-dbt
+          repository: adhikarisidd17/Bigquery_DW
       - name: "Copy yaml file"
         run: "cp slack_alerts.yml slack_alerts_config.yml"
       - uses: actions/setup-python@v4
