@@ -30,9 +30,10 @@ json_data = open(gcp_service_account_key_info)
 data = json.load(json_data)
 print("Testing file path " +gcp_service_account_key_info)
 print("Content of file " + json.dumps(data))
-config = read_yaml_file(yaml_file_path)
+#config = read_yaml_file(yaml_file_path)
 client = bigquery.Client.from_service_account_info(json.loads(gcp_service_account_key_info))
-slack_weebhook_url = os.environ['SLACK_WEEBHOOK_URL']
+print("CLient ready :" + client.project)
+#slack_weebhook_url = os.environ['SLACK_WEEBHOOK_URL']
 # %%
 # Iterate through platforms in the YAML file
 for platform in config.get('platforms', []):
