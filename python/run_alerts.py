@@ -26,10 +26,10 @@ def read_yaml_file(file_path):
 #%%
 yaml_file_path = "slack_alerts_config.yml"
 gcp_service_account_key_info = os.environ['GOOGLE_APPLICATION_CREDENTIALS']
-json_data = json.open(gcp_service_account_key_info)
+json_data = open(gcp_service_account_key_info)
 data = json.load(json_data)
 print("Testing file path " +gcp_service_account_key_info)
-print("Content of file " + json.dumps(json_data))
+print("Content of file " + json.dumps(data))
 config = read_yaml_file(yaml_file_path)
 client = bigquery.Client.from_service_account_info(json.loads(gcp_service_account_key_info))
 slack_weebhook_url = os.environ['SLACK_WEEBHOOK_URL']
