@@ -1,10 +1,10 @@
 #%%
 import yaml
-import glob
+
 from google.cloud import bigquery
 import os
 import json
-import boto3
+
 import requests
 
 #%%
